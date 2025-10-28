@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>RazzkrVulnLab — SSTI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1>RazzkrVulnLab — <span class="accent">SSTI</span></h1>
+            <p class="sub">Educational demo. Do not expose publicly.</p>
+        </header>
+
+        <form method="get" class="bar">
+            <input name="search" placeholder='try: {{7*7}}' autocomplete="off" />
+            <button type="submit">search</button>
+        </form>
+
+        <section id="result" class="panel">
+            {{ result|safe }}
+        </section>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

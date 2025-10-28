@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Remote Attach",
+            "type": "debugpy",
+            "request": "attach",
+            "connect": {
+                "host": "localhost",  // This should match the container's IP address
+                "port": 5678              // Port the debugger is listening on
+            },
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/vsnippet",  // Adjust this path as needed
+                    "remoteRoot": "."  // This should point to the correct working directory in the container
+                }
+            ]
+        }
+    ]
+}
